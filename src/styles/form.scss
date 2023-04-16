@@ -1,0 +1,68 @@
+.callback-form {
+  @include container($desktop);
+  .form {
+    margin-left: 449px;
+    width: 976px;
+    &__fieldset {
+      border: 4px solid #dadada;
+      display: grid;
+      grid-auto-flow: row;
+      row-gap: 30px;
+      place-items: center;
+    }
+    &__legend {
+      @include setFont($bolder-font, 40px, 50px, -0.2px);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    &__paragraph {
+      @include setFont($regular-font, 16px, 24px, 0.6px);
+      text-transform: uppercase;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      width: 298px;
+      &::before {
+        position: absolute;
+        content: url("assets/svg/steel-door.svg");
+        width: 46px;
+        height: 69px;
+        left: -50px;
+        top: -10px;
+      }
+    }
+    &__name,
+    &__email,
+    &__phone {
+      min-width: 500px;
+      min-height: 60px;
+      border: 1px solid var(--almost-white);
+      border-radius: 4px;
+      padding: 19px 0 14px 24px;
+      &::placeholder {
+        @include setFont($regular-font, 18px, 24px);
+        color: var(--lighter-black);
+      }
+    }
+    &__submit-btn {
+      @include resetBtn();
+      background: var(--basic-red);
+      color: var(--basic-white);
+      padding: 15px 75px;
+      border-radius: 25px;
+      &:hover {
+        box-shadow: 0px 7px 15px rgba(249, 87, 46, 0.6);
+      }
+    }
+    &__required-fields,
+    &__privacy-politic {
+      @include setFont($regular-font, 13px, 20px);
+      color: var(--lighter-black);
+      margin: 0 auto;
+    }
+    &__privacy-politic {
+      color: var(--basic-red);
+      margin-top: -30px;
+    }
+  }
+}

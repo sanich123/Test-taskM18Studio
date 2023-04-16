@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
@@ -31,7 +31,6 @@ module.exports = {
         use: {
           loader: "ts-loader",
           options: {
-            // disable type checker - we will use it in fork plugin
             transpileOnly: true,
           },
         },
@@ -49,28 +48,23 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.woff2?$/i,
-        type: "asset/resource",
-        generator: { filename: "fonts/[name][ext]" },
-      },
-      {
-        test: /\.(jpe?g|png|svg|webp)$/i,
-        type: "asset/resource",
-        generator: { filename: "img/[name][ext]" },
-        use: [
-          {
-            loader: "image-webpack-loader",
-            options: {
-              mozjpeg: { progressive: true },
-              optipng: { enabled: false },
-              pngquant: { quality: [0.65, 0.9], speed: 4 },
-              gifsicle: { interlaced: false },
-              webp: { quality: 75 },
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.(jpe?g|png|svg|webp)$/i,
+      //   type: "asset/resource",
+      //   generator: { filename: "img/[name][ext]" },
+      //   use: [
+      //     {
+      //       loader: "image-webpack-loader",
+      //       options: {
+      //         mozjpeg: { progressive: true },
+      //         optipng: { enabled: false },
+      //         pngquant: { quality: [0.65, 0.9], speed: 4 },
+      //         gifsicle: { interlaced: false },
+      //         webp: { quality: 75 },
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   resolve: {
@@ -86,12 +80,12 @@ module.exports = {
       template: "./src/index.html",
     }),
     new ForkTsCheckerWebpackPlugin(),
-    new CopyPlugin({
-      patterns: [{ from: "src/assets", to: "assets" }],
-    }),
     new ESLintPlugin({
       extensions: [".tsx", ".ts", ".js"],
       exclude: "node_modules",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "src/assets", to: "assets" }],
     }),
   ],
 };

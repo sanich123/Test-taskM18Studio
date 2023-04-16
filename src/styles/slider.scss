@@ -1,0 +1,49 @@
+.slider {
+  @include container($desktop);
+  &__heading {
+    @include setFont($bolder-font, 40px, 50px, -0.1px);
+  }
+  &__paragraph {
+    @include setFont($bolder-font, 16px, 24px, 0.6px);
+    text-transform: uppercase;
+    color: var(--basic-grey);
+  }
+  &__heading,
+  &__paragraph {
+    margin-left: 450px;
+  }
+  &__list {
+    @include resetUl();
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 150px;
+    .list-item {
+      position: relative;
+      &__img-info {
+        position: absolute;
+        width: 144px;
+        height: 60px;
+        top: 0;
+        right: -148px;
+        @include setFont($regular-font, 13px, 20px);
+        color: var(--lighter-black);
+      }
+    }
+    .middle-item {
+      position: relative;
+      &__btn-right,
+      &__btn-left {
+        @include resetBtn();
+        width: 20.21px;
+        height: 42.91px;
+        position: absolute;
+      }
+      &__btn-right {
+        right: -70px;
+      }
+      &__btn-left {
+        right: -20px;
+      }
+    }
+  }
+}

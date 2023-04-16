@@ -1,0 +1,22 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.header {
+  @include container($desktop);
+  padding: 20px 20px 0 110px;
+  display: grid;
+
+  &__contacts {
+    @include resetBtn();
+    font-size: 21px;
+    line-height: 25px;
+    color: var(--basic-black);
+    background: no-repeat left center url("assets/svg/phone-icon.svg");
+    margin-left: auto;
+    padding-left: 25px;
+    z-index: 10;
+    &:hover {
+      color: var(--basic-red);
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.promo {
+  @include container($desktop);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px 20px 20px 110px;
+
+  &__info {
+    display: grid;
+    grid-template-areas:
+      "heading heading"
+      "paragraph paragraph"
+      "btn span"
+      "scroll scroll";
+    &--heading {
+      grid-area: heading;
+      @include setFont($bolder-font, 64px, 64px, -0.5px);
+    }
+    &--paragraph {
+      grid-area: paragraph;
+      @include setFont($regular-font, 21px, 30px, -0.01px);
+    }
+    &--btn {
+      grid-area: btn;
+      @include resetBtn();
+      padding: 17.48px 28px 14.52px 31px;
+      @include setFont($bolder-font, 16px, 18px);
+      background: var(--basic-red);
+      box-shadow: 0px 7px 15px rgba(249, 87, 46, 0.6);
+      border-radius: 25px;
+      color: var(--basic-white);
+      &:hover {
+        box-shadow: 0px 15px 20px rgba(249, 87, 46, 0.7);
+      }
+    }
+    &--span {
+      grid-area: span;
+      @include setFont($regular-font, 16px, 24px, -0.01px);
+      color: var(--lighter-black);
+    }
+    &--scroll-down {
+      grid-area: scroll;
+      margin-top: 450px;
+      @include setFont($bolder-font, 16px, 18px, -0.01px);
+      color: var(--basic-red);
+      background: no-repeat url("assets/svg/arrows-icon-wide.svg");
+      padding: 20px 20px 20px 40px;
+      &:hover {
+        background: no-repeat url("assets/svg/arrows-icon-shallow.svg");
+      }
+    }
+  }
+
+  &__video {
+    position: relative;
+    &--img-wrapper {
+      position: absolute;
+      background: no-repeat url("assets/img/promo-img.jpg");
+      width: 940px;
+      height: 920px;
+      top: -100px;
+      z-index: -1;
+    }
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include resetBtn();
+      background: no-repeat url("assets/svg/play-big.svg");
+      width: 260px;
+      height: 300px;
+      padding-top: 250px;
+      @include setFont($regular-font, 21px, 30px);
+      color: var(--basic-red);
+      &:hover {
+        background: no-repeat url("assets/svg/play-small.svg");
+      }
+    }
+  }
+}

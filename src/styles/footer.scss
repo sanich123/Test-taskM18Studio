@@ -1,0 +1,70 @@
+.footer {
+  @include container($desktop);
+  background: var(--grey);
+  padding: 72px 0;
+  .social-list {
+    @include resetUl();
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    justify-content: center;
+    column-gap: 30px;
+    &__item {
+      display: grid;
+      place-items: center;
+      width: 51px;
+      height: 51px;
+      background: var(--basic-red);
+      &:hover {
+        box-shadow: 0px 15px 20px rgba(249, 87, 46, 0.7);
+      }
+    }
+  }
+  &__follow-us {
+    @include setFont($regular-font, 21px, 26px, -0.01px);
+    text-align: center;
+  }
+  &__subscribe-us {
+    @include setFont($regular-font, 16px, 24px, -0.00761905px);
+    color: var(--lighter-black);
+    max-width: 439px;
+    margin: 0 auto;
+  }
+  .contacts {
+    position: relative;
+    @include resetUl();
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 124px;
+    width: 630px;
+    margin: 76px auto 0;
+    &__item {
+      width: 200px;
+      display: grid;
+      place-items: center;
+      &--phone,
+      &--address,
+      &--email {
+        @include setFont($regular-font, 21px, 30px, -0.1px);
+        color: var(--basic-black);
+      }
+      &--address-city {
+        @include setFont($regular-font, 16px, 24px, -0.00761905px);
+        color: var(--lighter-black);
+      }
+    }
+    .email::before {
+      position: absolute;
+      content: url("assets/svg/email.svg");
+      width: 24px;
+      height: 24px;
+      right: -5px;
+    }
+    .phone::before {
+      position: absolute;
+      content: url("assets/svg/phone-icon.svg");
+      width: 24px;
+      height: 24px;
+      left: -30px;
+    }
+  }
+}

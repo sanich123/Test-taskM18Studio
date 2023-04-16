@@ -1,0 +1,50 @@
+@import "./variables.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --basic-red: rgba(249, 87, 46, 1);
+  --basic-black: #000000;
+  --basic-white: white;
+  --almost-white: #cccccc;
+  --basic-grey: #33b5a3;
+  --basic-green: #dadada;
+  --normal-grey: #63d2c1;
+  --lighter-black: #666666;
+  --grey: #f2f2f2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: $regular-font, "Arial", sans-serif;
+  font-style: normal;
+  height: 100vh;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
