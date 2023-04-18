@@ -87,7 +87,12 @@
           <a class="promo__info--scroll-down" href="#contacts">Листайте вниз, <br>чтобы ничего не упустить</a>
         </div>
         <div class="promo__video">
-          <div class="promo__video--img-wrapper"></div>
+          <picture class="promo__video--img-wrapper">
+            <source type="image/webp" srcset="assets/img/promo-img.webp 1x, assets/img/promo-img@2x.webp 2x, assets/img/promo-img@4x.webp 4x">
+            <source media="(min-resolution: 4dppx)" srcset="assets/img/promo-img@4x.png">
+            <source media="(min-resolution: 2dppx)" srcset="assets/img/promo-img@2x.png">
+              <img src="assets/img/promo-img.png" alt="Photo of a bathroom" class="list-item__img" width="940" height="920" loading="eager">
+          </picture>
           <button class="promo__video--play-btn play-btn">
             <span class="play-btn__text">Смотреть видео</span>
           </button>
@@ -120,15 +125,15 @@
         <p class="slider__paragraph">Скандинавский, классический и эко-стиль</p>
         <ul class="slider__list">
           <li class="slider__list--item list-item left">
-            <picture>
+            <picture data-id="0">
               <source type="image/webp" srcset="assets/img/bathroom-2.webp 1x, assets/img/bathroom-2@2x.webp 2x, assets/img/bathroom-2@4x.webp 4x">
               <source media="(min-resolution: 4dppx)" srcset="assets/img/bathroom-2@4x.png">
               <source media="(min-resolution: 2dppx)" srcset="assets/img/bathroom-2@2x.png">
                 <img src="assets/img/bathroom-2.png" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy">
             </picture>
           </li>
-          <li class="slider__list--item list-item middle-item">
-            <picture>
+          <li data-id="2" class="slider__list--item list-item middle-item">
+            <picture data-id="1">
               <source type="image/webp" srcset="assets/img/bathroom.webp 1x, assets/img/bathroom@2x.webp 2x, assets/img/bathroom@4x.webp 4x">
               <source media="(min-resolution: 4dppx)" srcset="assets/img/bathroom@4x.png">
               <source media="(min-resolution: 2dppx)" srcset="assets/img/bathroom@2x.png">
@@ -158,7 +163,7 @@
             </button>
           </li>
           <li class="slider__list--item list-item right">
-            <picture>
+            <picture data-id="2">
               <source type="image/webp" srcset="assets/img/bathroom-3.webp 1x, assets/img/bathroom-3@2x.webp 2x, assets/img/bathroom-3@4x.webp 4x">
               <source media="(min-resolution: 4dppx)" srcset="assets/img/bathroom-3@4x.png">
               <source media="(min-resolution: 2dppx)" srcset="assets/img/bathroom-3@2x.png">

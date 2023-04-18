@@ -50,9 +50,15 @@
       }
       &__btn-right {
         right: -150px;
+        &:hover {
+          transform: scale(1.1);
+        }
       }
       &__btn-left {
         right: -95px;
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
     .left {
