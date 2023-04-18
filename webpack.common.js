@@ -48,23 +48,6 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(jpe?g|png|svg|webp)$/i,
-        type: "asset/resource",
-        generator: { filename: "img/[name][ext]" },
-        use: [
-          {
-            loader: "image-webpack-loader",
-            options: {
-              mozjpeg: { progressive: true },
-              optipng: { enabled: false },
-              pngquant: { quality: [0.65, 0.9], speed: 4 },
-              gifsicle: { interlaced: false },
-              webp: { quality: 75 },
-            },
-          },
-        ],
-      },
     ],
   },
   resolve: {
@@ -85,7 +68,7 @@ module.exports = {
       exclude: "node_modules",
     }),
     new CopyPlugin({
-      patterns: [{ from: "src/assets", to: "assets" }],
+      patterns: [{ from: "src/assets/img", to: "assets/img" }],
     }),
   ],
 };

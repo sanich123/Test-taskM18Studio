@@ -63,6 +63,12 @@
     &--img-wrapper {
       position: absolute;
       background: no-repeat url("assets/img/promo-img.jpg");
+      @media (min-resolution: 2dppx) {
+        background: no-repeat url("assets/img/promo-img@2x.png");
+      }
+      @media (min-resolution: 4dppx) {
+        background: no-repeat url("assets/img/promo-img@4x.png");
+      }
       width: 940px;
       height: 920px;
       top: -127px;
