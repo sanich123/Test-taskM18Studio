@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test task M18 studio</title>
   </head>
 
@@ -56,15 +56,15 @@
           />
           <defs>
             <linearGradient id="paint0_linear_0_7" x1="49.8587" y1="0.0818316" x2="49.7741" y2="36.089" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#E07053" />
+              <stop offset="1" stop-color="#E07053" />
               <stop offset="1" stop-color="#FF8363" />
             </linearGradient>
             <linearGradient id="paint1_linear_0_7" x1="38.0412" y1="45.2085" x2="79.3601" y2="69.8052" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FF6640" />
+              <stop offset="1" stop-color="#FF6640" />
               <stop offset="1" stop-color="#D94B27" />
             </linearGradient>
             <linearGradient id="paint2_linear_0_7" x1="79.2852" y1="-11.9556" x2="28.3639" y2="31.7379" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#EB4015" />
+              <stop offset="1" stop-color="#EB4015" />
               <stop offset="1" stop-color="#D94B27" />
             </linearGradient>
           </defs>
@@ -75,21 +75,21 @@
     <main class="page-main main">
       <section class="main__promo promo">
         <div class="promo__info">
-          <h1 class="promo__info--heading">Ремонт квартир <br />в типовых домах</h1>
+          <h1 class="promo__info--heading">Ремонт квартир <br>в типовых домах</h1>
           <p class="promo__info--paragraph">
-            Готовый дизайн-проект, работы и материалы<br />
+            Готовый дизайн-проект, работы и материалы<br>
             за 3 месяца от 610 т.р.
           </p>
           <div class="promo__btn-span-wrapper">
-            <a class="promo__info--btn" type="button" href="#form">Узнайте о запуске первым</a>
+            <a class="promo__info--btn" href="#form">Узнайте о запуске первым</a>
             <div class="promo__info--span">Старт весной 2016</div>
           </div>
-          <a class="promo__info--scroll-down" href="#contacts">Листайте вниз, <br />чтобы ничего не упустить</a>
+          <a class="promo__info--scroll-down" href="#contacts">Листайте вниз, <br>чтобы ничего не упустить</a>
         </div>
         <div class="promo__video">
           <div class="promo__video--img-wrapper"></div>
           <button class="promo__video--play-btn play-btn">
-            <div class="play-btn__text">Смотреть видео</div>
+            <span class="play-btn__text">Смотреть видео</span>
           </button>
         </div>
       </section>
@@ -120,13 +120,13 @@
         <p class="slider__paragraph">Скандинавский, классический и эко-стиль</p>
         <ul class="slider__list">
           <li class="slider__list--item list-item left">
-            <img src="assets/img/bathroom-2.png" alt="Photo of a bathroom" class="list-item__img" width="750px" height="500px" loading="lazy"/>
+            <img src="assets/img/bathroom-2.png" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy">
           </li>
           <li class="slider__list--item list-item middle-item">
-            <img src="assets/img/bathroom.jpg" alt="Photo of a bathroom" class="list-item__img" width="750px" height="500px" loading="lazy"/>
+            <img src="assets/img/bathroom.jpg" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy">
             <span class="list-item__img-info"
-              >Кафельная плитка<br />
-              в ванной комнате <br />в скандинавском стиле</span
+              >Кафельная плитка<br>
+              в ванной комнате <br>в скандинавском стиле</span
             >
             <button class="middle-item__btn-left" aria-label="left-btn-slider">
               <svg width="24" height="46" viewBox="0 0 24 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -148,18 +148,19 @@
             </button>
           </li>
           <li class="slider__list--item list-item right">
-            <img src="assets/img/bathroom-3.jpg" alt="Photo of a bathroom" class="list-item__img" width="750px" height="500px" loading="lazy"/>
+            <img src="assets/img/bathroom-3.jpg" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy">
           </li>
         </ul>
       </section>
       <section class="callback-form">
-        <form action="" class="callback-form__form form" id="form">
+        <h2 class="visually-hidden">Узнайте о запуске сервиса первым</h2>
+        <form action="#" class="callback-form__form form" id="form">
           <fieldset class="form__fieldset">
             <legend class="form__legend">Узнайте о запуске сервиса первым</legend>
             <p class="form__paragraph">Первым 10 клиентам стальная <br>входная дверь в подарок</p>
-            <input type="text" class="form__name" name="name&surname" placeholder=" Имя и фамилия*" required />
-            <input type="email" class="form__email" placeholder="E-mail адрес*" required name="email" />
-            <input type="phone" class="form__phone" name="phone" placeholder="Телефон" required />
+            <input type="text" class="form__name" name="name&surname" placeholder=" Имя и фамилия*" required>
+            <input type="email" class="form__email" placeholder="E-mail адрес*" required name="email">
+            <input type="text" class="form__phone" name="phone" placeholder="Телефон" required>
             <button class="form__submit-btn" type="submit">Подписаться</button>
             <div class="form__required-fields">* Обязательные для заполнения поля</div>
             <div class="form__privacy-politic">Политика конфиденциальности</div>
@@ -204,7 +205,10 @@
           </li>
         </ul>
         <h3 class="footer__follow-us">Следите за нашим развитием</h3>
-        <p class="footer__subscribe-us">Подпишитесь на наши аккаунты в соц. сетях, знакомьтесь<br> с нашими проектами и тем, что нас вдохновляет</p>
+        <p class="footer__subscribe-us">
+          Подпишитесь на наши аккаунты в соц. сетях, знакомьтесь<br>
+          с нашими проектами и тем, что нас вдохновляет
+        </p>
         <ul class="footer__contacts contacts" id="contacts">
           <li class="contacts__item phone">
             <a href="tel:+78129035445" class="contacts__item--phone">+7 (812) 903-54-45</a>
