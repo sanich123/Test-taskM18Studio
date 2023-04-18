@@ -69,3 +69,29 @@
     }
   }
 }
+
+@keyframes moveLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-300px)
+  }
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(300px);
+  }
+}
+
+.slide-left {
+  animation: .5s linear moveLeft;
+}
+
+.slide-right {
+  animation: .5s linear moveRight;
+}
