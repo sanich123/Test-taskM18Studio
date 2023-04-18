@@ -5,7 +5,9 @@
 *::after {
   box-sizing: border-box;
 }
-
+// * {
+//   border: 1px solid #f00;
+// }
 :root {
   --basic-red: rgba(249, 87, 46, 1);
   --basic-black: #000000;
@@ -19,12 +21,13 @@
 }
 
 html {
+  position: relative;
   scroll-behavior: smooth;
 }
 
 img {
   display: block;
-  max-width: 100%;
+  // max-width: 100%;
   height: auto;
 }
 
@@ -35,7 +38,9 @@ a {
 body {
   font-family: $regular-font, "Arial", sans-serif;
   font-style: normal;
-  height: 100vh;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
 }
 
 .visually-hidden {

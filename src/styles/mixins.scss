@@ -22,3 +22,8 @@
   line-height: $line-height;
   letter-spacing: $letter-spacing;
 }
+
+@mixin zeroPaddingMargin() {
+  margin: 0;
+  padding: 0;
+}

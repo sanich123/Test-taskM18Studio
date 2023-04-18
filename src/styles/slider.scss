@@ -1,22 +1,30 @@
 .slider {
   @include container($desktop);
+  padding-top: 51px;
   &__heading {
     @include setFont($bolder-font, 40px, 50px, -0.1px);
+    margin-bottom: 0;
   }
   &__paragraph {
     @include setFont($bolder-font, 16px, 24px, 0.6px);
+    margin-top: 6px;
     text-transform: uppercase;
     color: var(--basic-grey);
   }
   &__heading,
   &__paragraph {
-    margin-left: 450px;
+    margin-left: 451px;
   }
   &__list {
     @include resetUl();
+    min-height: 600px;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    margin-top: 53px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 150px;
+
     .list-item {
       position: relative;
       &__img-info {
@@ -24,26 +32,34 @@
         width: 144px;
         height: 60px;
         top: 0;
-        right: -148px;
+        right: -162px;
         @include setFont($regular-font, 13px, 20px);
         color: var(--lighter-black);
       }
     }
     .middle-item {
       position: relative;
+      transform: translateX(-300px);
       &__btn-right,
       &__btn-left {
         @include resetBtn();
         width: 20.21px;
         height: 42.91px;
         position: absolute;
+        bottom: 103px;
       }
       &__btn-right {
-        right: -70px;
+        right: -150px;
       }
       &__btn-left {
-        right: -20px;
+        right: -95px;
       }
+    }
+    .left {
+      transform: translateX(-463px);
+    }
+    .right {
+      transform: translateX(-66px);
     }
   }
 }

@@ -1,9 +1,11 @@
 .footer {
+  height: 520px;
+  position: relative;
   @include container($desktop);
-  background: var(--grey);
   padding: 72px 0;
   .social-list {
     @include resetUl();
+    margin-top: 2px;
     display: grid;
     grid-template-columns: repeat(3, min-content);
     justify-content: center;
@@ -21,21 +23,25 @@
   }
   &__follow-us {
     @include setFont($regular-font, 21px, 26px, -0.01px);
+    @include zeroPaddingMargin();
+    margin-top: 34px;
     text-align: center;
   }
   &__subscribe-us {
     @include setFont($regular-font, 16px, 24px, -0.00761905px);
     color: var(--lighter-black);
     max-width: 439px;
-    margin: 0 auto;
+    text-align: center;
+    margin: 3px auto;
   }
   .contacts {
     position: relative;
     @include resetUl();
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    column-gap: 124px;
-    width: 630px;
+    grid-template-columns: repeat(3, min-content);
+    place-content: center;
+
+    width: 970px;
     margin: 76px auto 0;
     &__item {
       width: 200px;
@@ -52,19 +58,46 @@
         color: var(--lighter-black);
       }
     }
-    .email::before {
-      position: absolute;
-      content: url("assets/svg/email.svg");
-      width: 24px;
-      height: 24px;
-      right: -5px;
+    .email {
+      margin-left: 126px;
+            padding-right: 20px;
+      &::before {
+        position: absolute;
+        content: url("assets/svg/email.svg");
+        width: 24px;
+        height: 24px;
+        right: 279px;
+      }
     }
-    .phone::before {
-      position: absolute;
-      content: url("assets/svg/phone-icon.svg");
-      width: 24px;
-      height: 24px;
-      left: -30px;
+    .phone {
+      padding-right: 10px;
+      margin-right: 124px;
+      &::before {
+        position: absolute;
+        content: url("assets/svg/phone-icon.svg");
+        width: 24px;
+        height: 24px;
+        left: 45px;
+      }
     }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 1720px;
+    height: 1px;
+    background: #cccccc;
+    left: 78px;
+    bottom: 83px;
+  }
+  &__wrapper {
+    width: auto;
+    background: var(--grey);
+  }
+  &__copyright {
+    @include setFont($regular-font, 16px, 24px, -0.00761905px);
+    margin-top: 104px;
+    text-align: center;
+    color: var(--lighter-black);
   }
 }
