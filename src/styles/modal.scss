@@ -11,10 +11,26 @@
 }
 
 .modal {
-  position: absolute;
-  bottom: 300px;
-  background: red;
-  z-index: 999;
-  width: 984px;
-  height: 647px;
+  position: relative;
+  bottom: 100px;
+  left: 30%;
+  background: var(--basic-white);
+  z-index: 4;
+  width: 976px;
+  height: 639px;
+  &__info {
+    @include setFont($regular-font, 16px, 24px, 0.65px);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: -300px;
+  }
+  &::before {
+    @include setPseudo('', 976px, 35px);
+    top: -93px;
+    z-index: 3;
+    background: var(--basic-white);
+  }
+  legend {
+    z-index: 4;
+  }
 }

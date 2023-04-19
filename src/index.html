@@ -8,11 +8,25 @@
     <title>Test task M18 studio</title>
     <link rel="preload" href="assets/fonts/MullerMedium.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="assets/fonts/MullerRegular.woff2" as="font" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+      @font-face {
+        font-family: "Muller Regular";
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        src: local("Muller Regular"), url("assets/fonts/MullerRegular.woff2") format("woff2"), url("assets/fonts/MullerRegular.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Muller Medium";
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+        src: local("Muller Medium"), url("assets/fonts/MullerMedium.woff2") format("woff2"), url("assets/fonts/MullerMedium.woff") format("woff");
+      }
+    </style>
   </head>
-
   <body class="page">
-
     <header class="page__header header">
       <a class="header__logo" href="#">
         <svg width="200" height="55" viewBox="0 0 200 55" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,23 +94,23 @@
     <main class="page-main main">
       <section class="main__promo promo">
         <div class="promo__info">
-          <h1 class="promo__info--heading">Ремонт квартир <br>в типовых домах</h1>
+          <h1 class="promo__info--heading">Ремонт квартир <br />в типовых домах</h1>
           <p class="promo__info--paragraph">
-            Готовый дизайн-проект, работы и материалы<br>
+            Готовый дизайн-проект, работы и материалы<br />
             за 3 месяца от 610 т.р.
           </p>
           <div class="promo__btn-span-wrapper">
             <a class="promo__info--btn" href="#form">Узнайте о запуске первым</a>
             <div class="promo__info--span">Старт весной 2016</div>
           </div>
-          <a class="promo__info--scroll-down" href="#contacts">Листайте вниз, <br>чтобы ничего не упустить</a>
+          <a class="promo__info--scroll-down" href="#contacts">Листайте вниз, <br />чтобы ничего не упустить</a>
         </div>
         <div class="promo__video">
           <picture class="promo__video--img-wrapper">
-            <source type="image/webp" srcset="assets/img/promo-img.webp 1x, assets/img/promo-img@2x.webp 2x, assets/img/promo-img@4x.webp 4x">
-            <source media="(min-resolution: 4dppx)" srcset="assets/img/promo-img@4x.png">
-            <source media="(min-resolution: 2dppx)" srcset="assets/img/promo-img@2x.png">
-              <img src="assets/img/promo-img.png" alt="Photo of a bathroom" class="list-item__img" width="940" height="920">
+            <source type="image/webp" srcset="assets/img/promo-img.webp 1x, assets/img/promo-img@2x.webp 2x, assets/img/promo-img@4x.webp 4x" />
+            <source media="(min-resolution: 4dppx)" srcset="assets/img/promo-img@4x.png" />
+            <source media="(min-resolution: 2dppx)" srcset="assets/img/promo-img@2x.png" />
+            <img src="assets/img/promo-img.png" alt="Photo of a bathroom" class="list-item__img" width="940" height="920" loading="lazy" />
           </picture>
           <button class="promo__video--play-btn play-btn">
             <span class="play-btn__text">Смотреть видео</span>
@@ -131,22 +145,22 @@
         <ul class="slider__list">
           <li class="slider__list--item list-item left">
             <picture data-id="0">
-              <source type="image/webp" srcset="assets/img/bathroom-2.webp 1x, assets/img/bathroom-2@2x.webp 2x, assets/img/bathroom-2@4x.webp 4x">
-              <source media="(min-resolution: 4dppx)" srcset="assets/img/bathroom-2@4x.png">
-              <source media="(min-resolution: 2dppx)" srcset="assets/img/bathroom-2@2x.png">
-                <img src="assets/img/bathroom-2.png" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy">
+              <source type="image/webp" srcset="assets/img/bathroom-2.webp 1x, assets/img/bathroom-2@2x.webp 2x, assets/img/bathroom-2@4x.webp 4x" />
+              <source media="(min-resolution: 4dppx)" srcset="assets/img/bathroom-2@4x.png" />
+              <source media="(min-resolution: 2dppx)" srcset="assets/img/bathroom-2@2x.png" />
+              <img src="assets/img/bathroom-2.png" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy" />
             </picture>
           </li>
           <li data-id="2" class="slider__list--item list-item middle-item">
             <picture data-id="1">
-              <source type="image/webp" srcset="assets/img/bathroom.webp 1x, assets/img/bathroom@2x.webp 2x, assets/img/bathroom@4x.webp 4x">
-              <source media="(min-resolution: 4dppx)" srcset="assets/img/bathroom@4x.png">
-              <source media="(min-resolution: 2dppx)" srcset="assets/img/bathroom@2x.png">
-                <img src="assets/img/bathroom.png" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy">
+              <source type="image/webp" srcset="assets/img/bathroom.webp 1x, assets/img/bathroom@2x.webp 2x, assets/img/bathroom@4x.webp 4x" />
+              <source media="(min-resolution: 4dppx)" srcset="assets/img/bathroom@4x.png" />
+              <source media="(min-resolution: 2dppx)" srcset="assets/img/bathroom@2x.png" />
+              <img src="assets/img/bathroom.png" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy" />
             </picture>
             <span class="list-item__img-info"
-              >Кафельная плитка<br>
-              в ванной комнате <br>в скандинавском стиле</span
+              >Кафельная плитка<br />
+              в ванной комнате <br />в скандинавском стиле</span
             >
             <button class="middle-item__btn-left" aria-label="left-btn-slider">
               <svg width="24" height="46" viewBox="0 0 24 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,10 +183,10 @@
           </li>
           <li class="slider__list--item list-item right">
             <picture data-id="2">
-              <source type="image/webp" srcset="assets/img/bathroom-3.webp 1x, assets/img/bathroom-3@2x.webp 2x, assets/img/bathroom-3@4x.webp 4x">
-              <source media="(min-resolution: 4dppx)" srcset="assets/img/bathroom-3@4x.png">
-              <source media="(min-resolution: 2dppx)" srcset="assets/img/bathroom-3@2x.png">
-                <img src="assets/img/bathroom-3.png" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy">
+              <source type="image/webp" srcset="assets/img/bathroom-3.webp 1x, assets/img/bathroom-3@2x.webp 2x, assets/img/bathroom-3@4x.webp 4x" />
+              <source media="(min-resolution: 4dppx)" srcset="assets/img/bathroom-3@4x.png" />
+              <source media="(min-resolution: 2dppx)" srcset="assets/img/bathroom-3@2x.png" />
+              <img src="assets/img/bathroom-3.png" alt="Photo of a bathroom" class="list-item__img" width="750" height="500" loading="lazy" />
             </picture>
           </li>
         </ul>
@@ -182,18 +196,17 @@
         <form action="#" class="callback-form__form form" id="form">
           <fieldset class="form__fieldset">
             <legend class="form__legend">Узнайте о запуске сервиса первым</legend>
-            <p class="form__paragraph">Первым 10 клиентам стальная <br>входная дверь в подарок</p>
-            <input type="text" class="form__name" name="name&surname" placeholder=" Имя и фамилия*" required>
-            <input type="email" class="form__email" placeholder="E-mail адрес*" required name="email">
-            <input type="text" class="form__phone" name="phone" placeholder="Телефон" required>
+            <p class="form__paragraph">Первым 10 клиентам стальная <br />входная дверь в подарок</p>
+            <input type="text" class="form__name" name="name&surname" placeholder=" Имя и фамилия*" required />
+            <input type="email" class="form__email" placeholder="E-mail адрес*" required name="email" />
+            <input type="text" class="form__phone" name="phone" placeholder="Телефон" required />
             <button class="form__submit-btn" type="submit">Подписаться</button>
             <div class="form__required-fields">* Обязательные для заполнения поля</div>
             <div class="form__privacy-politic">Политика конфиденциальности</div>
           </fieldset>
         </form>
-      <div class="overlay"></div>
+        <div class="overlay"></div>
       </section>
-
     </main>
     <div class="footer__wrapper">
       <footer class="footer">
@@ -233,7 +246,7 @@
         </ul>
         <h3 class="footer__follow-us">Следите за нашим развитием</h3>
         <p class="footer__subscribe-us">
-          Подпишитесь на наши аккаунты в соц. сетях, знакомьтесь<br>
+          Подпишитесь на наши аккаунты в соц. сетях, знакомьтесь<br />
           с нашими проектами и тем, что нас вдохновляет
         </p>
         <ul class="footer__contacts contacts" id="contacts">
@@ -251,6 +264,5 @@
         <div class="footer__copyright">&#169; FIX Ремонт 2016</div>
       </footer>
     </div>
-
   </body>
 </html>

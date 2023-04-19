@@ -25,7 +25,11 @@ export function closeModal() {
   fieldset.classList.remove("modal");
   fieldset.innerHTML = fieldsetContent;
   document.body.style.position = "";
-  document.body.style.top = `${window.scrollY - 250}px`;
+  window.scrollTo({
+    top: 2500,
+    left: 0,
+    behavior: "smooth",
+  });
   setSubmitBtnListener();
 }
 
@@ -35,8 +39,11 @@ export function openModal() {
     overlay.style.display = "block";
   }
   fieldset.classList.add("modal");
-  fieldset.innerHTML = legendHtml;
-  document.body.style.top = `-${window.scrollY - 250}px`;
+  fieldset.innerHTML = `${legendHtml}<svg width="214" height="148" viewBox="0 0 214 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 71.932L76.0442 138L204 10" stroke="#F9572E" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><p class="modal__info" align="center">Спасибо! Мы будем держать<br>
+вас в курсе обновлений</p>`;
+  document.body.style.top = `-${window.scrollY}px`;
   document.body.style.position = "fixed";
   setEscListener();
 }

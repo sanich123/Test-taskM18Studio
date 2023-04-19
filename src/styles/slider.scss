@@ -75,16 +75,16 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-300px)
+    transform: translateX(-400px)
   }
 }
 
 @keyframes moveRight {
   from {
-    transform: translateX(0);
+    transform: translateX(-500px);
   }
   to {
-    transform: translateX(300px);
+    transform: translateX(0);
   }
 }
 
