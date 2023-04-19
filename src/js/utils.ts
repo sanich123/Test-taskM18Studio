@@ -1,29 +1,42 @@
-import { sources } from "./const";
+import { DIRECTION, ENDINGS, fieldsetContent, legendHtml, sources } from "./const";
+import { getProperIndex } from "./helpers";
+import { setEscListener, setSubmitBtnListener } from "./listeners";
+import { getNodes } from "./nodes";
 
-export function setChangedAttributes(pictures: NodeListOf<HTMLPictureElement>, action: string) {
-  pictures.forEach((picture) => {
+export function setChangedAttributes(action: string) {
+  const { sliderPictures } = getNodes();
+  sliderPictures.forEach((picture) => {
     const number = Number(picture.getAttribute("data-id"));
-    const isRight = action === "toRight";
-    const rightAppendix = isRight ? "right" : "left";
-    if (isRight) {
-      const calculatedNum = number ? number - 1 : 2;
-      picture.innerHTML = sources[calculatedNum];
-      picture.setAttribute("data-id", `${calculatedNum}`);
-    } else {
-      const calculatedNum = number === 2 ? 0 : number + 1;
-      picture.innerHTML = sources[calculatedNum];
-      picture.setAttribute("data-id", `${calculatedNum}`);
-    }
+    const isRight = action === DIRECTION.right;
+    const rightAppendix = isRight ? ENDINGS.right : ENDINGS.left;
+    const calculatedNum = getProperIndex(action, number);
+    picture.innerHTML = sources[calculatedNum];
+    picture.setAttribute("data-id", `${calculatedNum}`);
     picture.closest(".slider__list--item").classList.add(`slide-${rightAppendix}`);
     setTimeout(() => picture.closest(".slider__list--item").classList.remove(`slide-${rightAppendix}`), 500);
   });
 }
 
-export function setSliderListeners() {
-  const leftBtn = document.querySelector(".middle-item__btn-left");
-  const rightBtn = document.querySelector(".middle-item__btn-right");
-  const sliderPictures = document.querySelectorAll(".slider__list--item picture") as NodeListOf<HTMLPictureElement>;
+export function closeModal() {
+  const { overlay, fieldset } = getNodes();
+  if (overlay instanceof HTMLDivElement) {
+    overlay.style.display = "none";
+  }
+  fieldset.classList.remove("modal");
+  fieldset.innerHTML = fieldsetContent;
+  document.body.style.position = "";
+  document.body.style.top = `${window.scrollY - 250}px`;
+  setSubmitBtnListener();
+}
 
-  leftBtn.addEventListener("click", () => setChangedAttributes(sliderPictures, "toLeft"));
-  rightBtn.addEventListener("click", () => setChangedAttributes(sliderPictures, "toRight"));
+export function openModal() {
+  const { overlay, fieldset } = getNodes();
+  if (overlay instanceof HTMLDivElement) {
+    overlay.style.display = "block";
+  }
+  fieldset.classList.add("modal");
+  fieldset.innerHTML = legendHtml;
+  document.body.style.top = `-${window.scrollY - 250}px`;
+  document.body.style.position = "fixed";
+  setEscListener();
 }
