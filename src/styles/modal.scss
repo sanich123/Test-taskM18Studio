@@ -1,0 +1,20 @@
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 3;
+}
+
+.modal {
+  position: absolute;
+  bottom: 300px;
+  background: red;
+  z-index: 999;
+  width: 984px;
+  height: 647px;
+}
