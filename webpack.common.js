@@ -8,10 +8,11 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: path.join(__dirname, "src", "index.ts"),
   mode: "development",
   devtool: "source-map",
   devServer: {
+    watchFiles: path.join(__dirname, "src"),
     port: 3000,
     open: true,
     hot: true,
@@ -48,6 +49,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   resolve: {
@@ -71,6 +76,7 @@ module.exports = {
       patterns: [
         { from: "src/assets/fonts", to: "assets/fonts" },
         { from: "src/assets/img", to: "assets/img" },
+        { from: "src/assets/styles.css", to: "assets/styles.css" },
       ],
     }),
   ],
