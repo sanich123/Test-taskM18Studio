@@ -4,12 +4,12 @@ import { closeModal, openModal, setChangedAttributes } from "./utils";
 
 export function setSubmitBtnListener() {
   const { form } = getNodes();
-  return form.addEventListener("submit", () => openModal());
+  return form.addEventListener("submit", () => openModal(), { once: true });
 }
 
 export function setOverlayBtnListener() {
   const { overlay } = getNodes();
-  return overlay.addEventListener("click", () => closeModal());
+  return overlay.addEventListener("click", () => closeModal(), { once: true });
 }
 
 export function setEscListener() {

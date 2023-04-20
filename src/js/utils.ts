@@ -1,6 +1,6 @@
 import { DIRECTION, ENDINGS, fieldsetContent, legendHtml, sources } from "./const";
 import { getProperIndex } from "./helpers";
-import { setEscListener, setSubmitBtnListener } from "./listeners";
+import { setEscListener, setOverlayBtnListener, setSubmitBtnListener } from "./listeners";
 import { getNodes } from "./nodes";
 
 export function setChangedAttributes(action: string) {
@@ -46,4 +46,5 @@ export function openModal() {
   document.body.style.top = `-${window.scrollY}px`;
   document.body.style.position = "fixed";
   setEscListener();
+  setOverlayBtnListener();
 }
