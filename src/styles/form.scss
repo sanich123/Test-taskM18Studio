@@ -62,12 +62,15 @@
     &__phone + .form__phone--label {
       display: none;
     }
-    &__email, 
+    &__email,
     &__name,
     &__phone {
-      &:focus + .form__email--label, 
+      &:focus + .form__email--label,
       &:focus + .form__name--label,
-      &:focus + .form__phone--label {
+      &:focus + .form__phone--label,
+      &:valid + .form__email--label,
+      &:valid + .form__name--label,
+      &:valid + .form__phone--label {
         display: block;
         position: absolute;
         top: -10px;
@@ -81,9 +84,9 @@
         top: 0;
       }
 
-      &:invalid + .form__email--label, 
+      &:invalid + .form__email--label,
       &:invalid + .form__name--label,
-      &:invalid+.form__phone--label {
+      &:invalid + .form__phone--label {
         color: var(--basic-red);
       }
 
@@ -94,8 +97,6 @@
       }
     }
 
-
-  
     &__submit-btn {
       @include resetBtn();
       margin-top: 21px;
