@@ -11,46 +11,45 @@ export const legendHtml = `<legend class="form__legend">Узнайте о зап
 
 export const fieldsetContent = `${legendHtml}<p class="form__paragraph">Первым 10 клиентам стальная <br />входная дверь в подарок</p>
             <div class="input__wrapper">
-            <input 
-              type="text" 
-              class="form__name"
-              id="input-name"
-              placeholder="Имя и фамилия*"  
-              name="name&surname" 
-              title="Имя должно состоять из латинских букв, первая заглавная"
-              aria-label="name field"
-              pattern="[A-Z][\w]{1,}"
-              required>
-            <label 
-              for="input-name" 
-              class="form__name--label">Имя и фамилия*</label>
+              <input
+                type="text"
+                class="form__name"
+                id="input-name"
+                placeholder="Имя и фамилия*"
+                name="name&surname"
+                title="Имя и фамилия должны иметь первую заглавную букву и быть разделены пробелом"
+                aria-label="name field"
+                pattern="[A-Z][\\w]{1,}[ ][A-Z][\\w]{1,}"
+                required
+              />
+              <label for="input-name" class="form__name--label">Имя и фамилия*</label>
             </div>
 
             <div class="input__wrapper">
-            <input 
-              type="email" 
-              class="form__email" 
-              id="email-input" 
-              placeholder="E-mail адрес*" 
-              name="email"
-              title="Это текствое поле не должно быть пустым"
-              aria-label="email field" 
-              required>
-            <label 
-              for="email-input" 
-              class="form__email--label">Email address*</label>
+              <input
+                type="email"
+                class="form__email"
+                id="email-input"
+                placeholder="E-mail адрес*"
+                name="email"
+                title="Должен быть написан верный email адрес"
+                aria-label="email field"
+                required
+              />
+              <label for="email-input" class="form__email--label">Email address*</label>
             </div>
             <div class="input__wrapper">
-              <input 
-              type="tel" 
-              class="form__phone"
-              id="phone-input"
-              placeholder="Телефон"  
-              name="phone"
-              title="Введенные цифры должны соответствовать паттерну 8-888-888-8888"
-              aria-label="phone field" 
-              pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              required>
+              <input
+                type="tel"
+                class="form__phone"
+                id="phone-input"
+                placeholder="Телефон"
+                name="phone"
+                title="Введенные цифры должны соответствовать паттерну 8-888-888-8888"
+                aria-label="phone field"
+                pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                required
+              />
               <label for="phone-input" class="form__phone--label">Номер телефона*</label>
             </div>
             <button class="form__submit-btn" type="submit">Подписаться</button>

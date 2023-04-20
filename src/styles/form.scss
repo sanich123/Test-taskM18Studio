@@ -44,6 +44,15 @@
         @include setFont($regular-font, 18px, 24px);
         color: var(--lighter-black);
       }
+      &:placeholder-shown {
+        border: 1px solid var(--almost-white) !important;
+        border-radius: 4px;
+        & + .form__email--label,
+        & + .form__name--label,
+        & + .form__phone--label {
+          display: none !important;
+        }
+      }
       &:invalid {
         outline: none;
         border: 1px solid var(--basic-red);
@@ -80,7 +89,8 @@
         padding: 0 5px;
         @include setFont($regular-font, 13px, 24px);
       }
-      &:focus + .form__name--label {
+      &:focus + .form__name--label,
+      &:valid + .form__name--label {
         top: 0;
       }
 
