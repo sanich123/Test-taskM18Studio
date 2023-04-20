@@ -5,6 +5,7 @@ export function getNodes() {
   const leftBtn = document.querySelector(".middle-item__btn-left");
   const rightBtn = document.querySelector(".middle-item__btn-right");
   const sliderPictures = document.querySelectorAll(".slider__list--item picture") as NodeListOf<HTMLPictureElement>;
+  const form = document.querySelector(".callback-form__form");
   return {
     submitBtn,
     overlay,
@@ -12,5 +13,6 @@ export function getNodes() {
     leftBtn,
     rightBtn,
     sliderPictures,
+    form,
   };
 }

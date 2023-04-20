@@ -34,6 +34,7 @@
     &__name,
     &__email,
     &__phone {
+      position: relative;
       min-width: 500px;
       min-height: 60px;
       border: 1px solid var(--almost-white);
@@ -43,7 +44,58 @@
         @include setFont($regular-font, 18px, 24px);
         color: var(--lighter-black);
       }
+      &:invalid {
+        outline: none;
+        border: 1px solid var(--basic-red);
+      }
+      &:valid {
+        outline: none;
+      }
     }
+
+    .input__wrapper {
+      position: relative;
+    }
+
+    &__email + .form__email--label,
+    &__name + .form__name--label,
+    &__phone + .form__phone--label {
+      display: none;
+    }
+    &__email, 
+    &__name,
+    &__phone {
+      &:focus + .form__email--label, 
+      &:focus + .form__name--label,
+      &:focus + .form__phone--label {
+        display: block;
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        color: var(--basic-red);
+        background: var(--basic-white);
+        padding: 0 5px;
+        @include setFont($regular-font, 13px, 24px);
+      }
+      &:focus + .form__name--label {
+        top: 0;
+      }
+
+      &:invalid + .form__email--label, 
+      &:invalid + .form__name--label,
+      &:invalid+.form__phone--label {
+        color: var(--basic-red);
+      }
+
+      &:valid + .form__email--label,
+      &:valid + .form__name--label,
+      &:valid + .form__phone--label {
+        color: var(--lighter-black);
+      }
+    }
+
+
+  
     &__submit-btn {
       @include resetBtn();
       margin-top: 21px;

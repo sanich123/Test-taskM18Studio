@@ -3,8 +3,8 @@ import { getNodes } from "./nodes";
 import { closeModal, openModal, setChangedAttributes } from "./utils";
 
 export function setSubmitBtnListener() {
-  const { submitBtn } = getNodes();
-  return submitBtn.addEventListener("click", () => openModal());
+  const { form } = getNodes();
+  return form.addEventListener("submit", () => openModal());
 }
 
 export function setOverlayBtnListener() {
